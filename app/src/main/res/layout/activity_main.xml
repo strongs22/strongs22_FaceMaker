@@ -4,8 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D1EEFB"
+    android:background="#1F8ABA"
     tools:context=".MainActivity">
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,16 +15,17 @@
         android:background="#FFFFFF"
         android:orientation="vertical">
 
-        <SurfaceView
+        <com.example.facemaker.Face
             android:id="@+id/surfaceView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="100"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_weight="2"
+            android:layout_weight="0"
             android:orientation="horizontal">
 
             <Button
@@ -33,6 +36,30 @@
                 android:layout_weight="2"
                 android:foregroundGravity="bottom"
                 android:text="Random Face" />
+
+            <TextView
+                android:id="@+id/hairStyleTV"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:paddingRight="5dp"
+                android:text="Hair Style:" />
+
+            <Spinner
+                android:id="@+id/hairSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#F1EBEB"
+                android:clickable="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
         </LinearLayout>
 
         <LinearLayout
@@ -43,6 +70,7 @@
             android:orientation="horizontal">
 
             <RadioGroup
+                android:id="@+id/radioGroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -69,23 +97,6 @@
                     android:paddingRight="10dp"
                     android:text="Skin" />
 
-                <TextView
-                    android:id="@+id/hairStyleTV"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="right"
-                    android:paddingLeft="15dp"
-                    android:paddingRight="5dp"
-                    android:text="Hair Style:" />
-
-                <Spinner
-                    android:id="@+id/hairSpinner"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="#F1F1F1"
-                    android:clickable="true"
-                    android:entries="3" />
             </RadioGroup>
         </LinearLayout>
 
@@ -95,7 +106,8 @@
             android:layout_weight="0"
             android:background="#CACACA"
             android:gravity="bottom"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="10dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
